@@ -1,10 +1,11 @@
 package com.example.demo.repository.clazz;
 
 import com.example.demo.domain.Clazz;
-import com.example.demo.domain.Student;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ClassStorage {
 
@@ -31,5 +32,9 @@ public class ClassStorage {
             }
         });
         return valueHolder;
+    }
+
+    public static Clazz findClass(long id) {
+       return CLAZZES.get(id);
     }
 }

@@ -36,4 +36,8 @@ public class StudentStorage {
     public static void clear() {
         STUDENTS.clear();
     }
+
+    public static Collection<Student> getStudent() {
+        return STUDENTS.values();
+    }
 }
