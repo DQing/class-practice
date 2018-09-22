@@ -5,6 +5,7 @@ import com.example.demo.domain.Student;
 import com.example.demo.repository.student.StudentRepository;
 import com.example.demo.repository.student.StudentRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 

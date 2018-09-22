@@ -1,20 +1,22 @@
 package com.example.demo.Bean;
 
+import com.example.demo.repository.clazz.ClassRepository;
 import com.example.demo.repository.clazz.ClassRepositoryImpl;
+import com.example.demo.repository.student.StudentRepository;
 import com.example.demo.repository.student.StudentRepositoryImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class BeanConfi {
+class BeanConfiguration {
 
     @Bean
-    ClassRepositoryImpl createClassRepository() {
+    ClassRepository createClassRepository() {
         return new ClassRepositoryImpl();
     }
 
     @Bean
-    StudentRepositoryImpl createStudentRepository() {
+    StudentRepository createStudentRepository() {
         return new StudentRepositoryImpl();
     }
 }

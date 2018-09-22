@@ -3,7 +3,6 @@ package com.example.demo.controller;
 import com.example.demo.domain.Clazz;
 import com.example.demo.domain.Student;
 import com.example.demo.repository.clazz.ClassRepository;
-import com.example.demo.repository.clazz.ClassRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
