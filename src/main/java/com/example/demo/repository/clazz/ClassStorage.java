@@ -24,16 +24,6 @@ public class ClassStorage {
         CLAZZES.clear();
     }
 
-    private static long[] getClassId(String className) {
-        long[] valueHolder = new long[1];
-        CLAZZES.forEach((key, value) -> {
-            if (value.getName().equals(className)) {
-                valueHolder[0] = key;
-            }
-        });
-        return valueHolder;
-    }
-
     public static Clazz findClass(long id) {
        return CLAZZES.get(id);
     }

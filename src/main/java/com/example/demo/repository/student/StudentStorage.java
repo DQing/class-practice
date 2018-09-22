@@ -13,20 +13,20 @@ public class StudentStorage {
         Arrays.stream(students).forEach(student -> STUDENTS.put(student.getId(), student));
     }
 
-    public static Collection<Student> findStudentByClassId(long id) {
+    public static Collection<Student> findStudentByClassId(long classId) {
         List<Student> students = new ArrayList<>();
         STUDENTS.forEach((key, value) -> {
-            if (value.getClassId() == id) {
+            if (value.getClassId() == classId) {
                 students.add(value);
             }
         });
         return students;
     }
 
-    public static Collection<Student> findStudentByAge(long id, Integer age) {
+    public static Collection<Student> findStudentByClassIdAndAge(long classId, Integer age) {
         List<Student> students = new ArrayList<>();
         STUDENTS.forEach((key, value) -> {
-            if (value.getClassId() == id && value.getAge() > age) {
+            if (value.getClassId() == classId && value.getAge() > age) {
                 students.add(value);
             }
         });
@@ -39,5 +39,10 @@ public class StudentStorage {
 
     public static Collection<Student> getStudent() {
         return STUDENTS.values();
+    }
+
+    public static Student createStudent(Student student) {
+         STUDENTS.put(student.getId(), student);
+        return STUDENTS.get(student.getId());
     }
 }

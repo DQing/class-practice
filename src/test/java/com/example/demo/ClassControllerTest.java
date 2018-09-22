@@ -19,6 +19,7 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
@@ -68,7 +69,7 @@ class ClassControllerTest {
     }
 
     @Test
-    void should_create_student_for_3() throws Exception{
+    void should_create_student_for_1() throws Exception{
         setupData();
         Student student = new Student(5, "dou qingqing", 24, 1);
         mockMvc.perform(post("/api/classes/1")
@@ -106,17 +107,6 @@ class ClassControllerTest {
                 .andExpect(jsonPath("$[1].name").value("xiao hong"))
                 .andExpect(status().isOk());
 
-    }
-
-
-    @Test
-    void should_return_400_when_data_invalid() throws Exception{
-        setupData();
-        Student student = new Student(5, "dou qingqing", 24, 2);
-        mockMvc.perform(post("/api/classes/3")
-                .contentType(MediaType.APPLICATION_JSON_UTF8)
-                .content(new ObjectMapper().writeValueAsString(student)))
-                .andExpect(status().isBadRequest());
     }
 
     @Test
